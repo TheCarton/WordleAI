@@ -1,4 +1,5 @@
-use std::env;
+mod game;
+
 use std::fs;
 
 fn main() {
@@ -8,5 +9,5 @@ fn main() {
     let contents = fs::read_to_string(file_path)
         .expect("Should have been able to read the file");
 
-    println!("With text:\n{contents}");
+    let words: Vec<&str> = contents.split_whitespace().collect();
 }
