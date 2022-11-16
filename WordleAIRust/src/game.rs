@@ -6,7 +6,7 @@ enum GameState {
     Lose,
 }
 
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, PartialEq, Debug)]
 enum TileColor {
     Green,
     Yellow,
@@ -23,8 +23,8 @@ impl Word {
         if word.len() != 5 {
             panic!("Word must have length 5.")
         }
-        if !word.is_ascii() {
-            panic!("Word must contain ACII characters only.")
+        if !word.chars().all(|c| c.is_ascii_alphabetic()) {
+            panic!("Word must contain ACII alphabetic characters only.")
         }
         let w = word.to_ascii_lowercase();
         let letter_container = LetterContainer::new(&w);
@@ -35,41 +35,13 @@ impl Word {
     }
 }
 
-struct LetterContainer {
-    pub bool_array: [bool; 26]
-}
 
 fn map_char_to_index(c: char) -> usize {
-    match c {
-        'a' => return 0,
-        'b' => return 1,
-        'c' => return 2,
-        'd' => return 3,
-        'e' => return 4,
-        'f' => return 5,
-        'g' => return 6,
-        'h' => return 7,
-        'i' => return 8,
-        'j' => return 9,
-        'k' => return 10,
-        'l' => return 11,
-        'm' => return 12,
-        'n' => return 13,
-        'o' => return 14,
-        'p' => return 15,
-        'q' => return 16,
-        'r' => return 17,
-        's' => return 18,
-        't' => return 19,
-        'u' => return 20,
-        'v' => return 21,
-        'w' => return 22,
-        'x' => return 23,
-        'y' => return 24,
-        'z' => return 25,
-        _ => {
-            panic!("Characters must be lowercase ASCII.")}
-    }
+    c as usize - 'a' as usize
+}
+
+struct LetterContainer {
+    bool_array: [bool; 26]
 }
 
 impl LetterContainer {
@@ -82,13 +54,21 @@ impl LetterContainer {
             bool_array,
         }
     }
+    fn contains_char(&self, c: char) -> bool {
+        self.bool_array[map_char_to_index(c)]
+    }
 }
 
 fn get_coloring(word: Word, hidden_word: Word) -> [TileColor; 5] {
     let mut tiles: [TileColor; 5] = [TileColor::Grey; 5];
-    for i in 0..4 {
-        if word.string.as_bytes()[i] == hidden_word.string.as_bytes()[i] {
+    for i in 0..5 {
+        let c = word.string.as_bytes()[i] as char;
+        let hidden_c = hidden_word.string.as_bytes()[i] as char;
+        if c == hidden_c {
             tiles[i] = TileColor::Green;
+        }
+        else if hidden_word.letter_container.contains_char(c) {
+            tiles[i] = TileColor::Yellow;
         }
     }
     tiles
@@ -198,4 +178,42 @@ fn guess_after_win() {
     let mut game = Game::new("aback", test_words);
     game.check_guess("aback");
     game.check_guess("aalii");
+}
+
+#[test]
+fn alphabet_maps_to_indices() {
+    assert_eq!(map_char_to_index('a'), 0);
+    assert_eq!(map_char_to_index('z'), 25)
+}
+
+#[test]
+fn tiles_all_grey() {
+    let crank = Word::new("crank");
+    let extol = Word::new("extol");
+    let tiles = get_coloring(crank, extol);
+    for tile in tiles {
+        assert_eq!(tile, TileColor::Grey)
+    }
+}
+
+#[test]
+fn tiles_all_green() {
+    let crank = Word::new("crank");
+    let also_crank = Word::new("crank");
+    let tiles = get_coloring(crank, also_crank);
+    for tile in tiles {
+        assert_eq!(tile, TileColor::Green)
+    }
+}
+
+#[test]
+fn tiles_mixed() {
+    let crank = Word::new("crank");
+    let caset = Word::new("caset");
+    let tiles = get_coloring(crank, caset);
+    assert_eq!(tiles[0], TileColor::Green);
+    assert_eq!(tiles[1], TileColor::Grey);
+    assert_eq!(tiles[2], TileColor::Yellow);
+    assert_eq!(tiles[3], TileColor::Grey);
+    assert_eq!(tiles[4], TileColor::Grey);
 }
