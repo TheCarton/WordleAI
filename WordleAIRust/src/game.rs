@@ -1,8 +1,97 @@
+
 #[derive(PartialEq)]
 enum GameState {
     Active,
     Win,
     Lose,
+}
+
+#[derive(Copy, Clone)]
+enum TileColor {
+    Green,
+    Yellow,
+    Grey,
+}
+
+struct Word {
+    pub string: String,
+    pub letter_container: LetterContainer,
+}
+
+impl Word {
+    fn new(word: &str) -> Word {
+        if word.len() != 5 {
+            panic!("Word must have length 5.")
+        }
+        if !word.is_ascii() {
+            panic!("Word must contain ACII characters only.")
+        }
+        let w = word.to_ascii_lowercase();
+        let letter_container = LetterContainer::new(&w);
+        Word {
+            string: w,
+            letter_container,
+        }
+    }
+}
+
+struct LetterContainer {
+    pub bool_array: [bool; 26]
+}
+
+fn map_char_to_index(c: char) -> usize {
+    match c {
+        'a' => return 0,
+        'b' => return 1,
+        'c' => return 2,
+        'd' => return 3,
+        'e' => return 4,
+        'f' => return 5,
+        'g' => return 6,
+        'h' => return 7,
+        'i' => return 8,
+        'j' => return 9,
+        'k' => return 10,
+        'l' => return 11,
+        'm' => return 12,
+        'n' => return 13,
+        'o' => return 14,
+        'p' => return 15,
+        'q' => return 16,
+        'r' => return 17,
+        's' => return 18,
+        't' => return 19,
+        'u' => return 20,
+        'v' => return 21,
+        'w' => return 22,
+        'x' => return 23,
+        'y' => return 24,
+        'z' => return 25,
+        _ => {
+            panic!("Characters must be lowercase ASCII.")}
+    }
+}
+
+impl LetterContainer {
+    fn new(word: &str) -> LetterContainer {
+        let mut bool_array: [bool; 26] = [false; 26];
+        for c in word.chars() {
+            bool_array[map_char_to_index(c)] = true
+        }
+        LetterContainer {
+            bool_array,
+        }
+    }
+}
+
+fn get_coloring(word: Word, hidden_word: Word) -> [TileColor; 5] {
+    let mut tiles: [TileColor; 5] = [TileColor::Grey; 5];
+    for i in 0..4 {
+        if word.string.as_bytes()[i] == hidden_word.string.as_bytes()[i] {
+            tiles[i] = TileColor::Green;
+        }
+    }
+    tiles
 }
 
 struct Game<'a> {
