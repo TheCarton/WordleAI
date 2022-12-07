@@ -13,13 +13,13 @@ enum TileColor {
     Grey,
 }
 
-struct Word {
+pub struct Word {
     pub string: String,
     pub letter_container: LetterContainer,
 }
 
 impl Word {
-    fn new(word: &str) -> Word {
+    pub fn new(word: &str) -> Word {
         if word.len() != 5 {
             panic!("Word must have length 5.")
         }
@@ -36,11 +36,11 @@ impl Word {
 }
 
 
-fn map_char_to_index(c: char) -> usize {
+fn get_alphabet_index(c: char) -> usize {
     c as usize - 'a' as usize
 }
 
-struct LetterContainer {
+pub struct LetterContainer {
     bool_array: [bool; 26]
 }
 
@@ -48,14 +48,14 @@ impl LetterContainer {
     fn new(word: &str) -> LetterContainer {
         let mut bool_array: [bool; 26] = [false; 26];
         for c in word.chars() {
-            bool_array[map_char_to_index(c)] = true
+            bool_array[get_alphabet_index(c)] = true
         }
         LetterContainer {
             bool_array,
         }
     }
     fn contains_char(&self, c: char) -> bool {
-        self.bool_array[map_char_to_index(c)]
+        self.bool_array[get_alphabet_index(c)]
     }
 }
 
@@ -182,8 +182,8 @@ fn guess_after_win() {
 
 #[test]
 fn alphabet_maps_to_indices() {
-    assert_eq!(map_char_to_index('a'), 0);
-    assert_eq!(map_char_to_index('z'), 25)
+    assert_eq!(get_alphabet_index('a'), 0);
+    assert_eq!(get_alphabet_index('z'), 25)
 }
 
 #[test]

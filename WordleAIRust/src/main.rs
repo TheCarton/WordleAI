@@ -1,6 +1,7 @@
 mod game;
 
 use std::fs;
+use crate::game::Word;
 
 fn main() {
 
@@ -9,5 +10,11 @@ fn main() {
     let contents = fs::read_to_string(file_path)
         .expect("Should have been able to read the file");
 
-    let words: Vec<&str> = contents.split_whitespace().collect();
+    let strings: Vec<&str> = contents.split_whitespace().collect();
+
+    let mut words: Vec<Word> = vec![];
+    for string in strings{
+        let word = Word::new(string);
+        words.push(word)
+    }
 }
