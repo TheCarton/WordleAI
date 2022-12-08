@@ -7,15 +7,16 @@ enum GameState {
 }
 
 #[derive(Copy, Clone, PartialEq, Debug)]
-enum TileColor {
+pub enum TileColor {
     Green,
     Yellow,
     Grey,
 }
 
+#[derive(Eq, Hash, PartialEq)]
 pub struct Word {
     pub string: String,
-    pub letter_container: LetterContainer,
+    pub letters: LetterContainer,
 }
 
 impl Word {
@@ -30,8 +31,12 @@ impl Word {
         let letter_container = LetterContainer::new(&w);
         Word {
             string: w,
-            letter_container,
+            letters: letter_container,
         }
+    }
+
+    pub fn has_letter(&self, c: char) -> bool {
+        self.letters.contains_char(c)
     }
 }
 
@@ -40,6 +45,7 @@ fn get_alphabet_index(c: char) -> usize {
     c as usize - 'a' as usize
 }
 
+#[derive(Eq, Hash, PartialEq)]
 pub struct LetterContainer {
     bool_array: [bool; 26]
 }
@@ -59,15 +65,15 @@ impl LetterContainer {
     }
 }
 
-fn get_coloring(word: Word, hidden_word: Word) -> [TileColor; 5] {
+pub fn get_coloring(secret_word: &Word, guess_word: &Word) -> [TileColor; 5] {
     let mut tiles: [TileColor; 5] = [TileColor::Grey; 5];
     for i in 0..5 {
-        let c = word.string.as_bytes()[i] as char;
-        let hidden_c = hidden_word.string.as_bytes()[i] as char;
-        if c == hidden_c {
+        let secret_c = secret_word.string.as_bytes()[i] as char;
+        let guess_c = guess_word.string.as_bytes()[i] as char;
+        if secret_c == guess_c {
             tiles[i] = TileColor::Green;
         }
-        else if hidden_word.letter_container.contains_char(c) {
+        else if secret_word.has_letter(guess_c) {
             tiles[i] = TileColor::Yellow;
         }
     }
@@ -190,7 +196,7 @@ fn alphabet_maps_to_indices() {
 fn tiles_all_grey() {
     let crank = Word::new("crank");
     let extol = Word::new("extol");
-    let tiles = get_coloring(crank, extol);
+    let tiles = get_coloring(&crank, &extol);
     for tile in tiles {
         assert_eq!(tile, TileColor::Grey)
     }
@@ -200,7 +206,7 @@ fn tiles_all_grey() {
 fn tiles_all_green() {
     let crank = Word::new("crank");
     let also_crank = Word::new("crank");
-    let tiles = get_coloring(crank, also_crank);
+    let tiles = get_coloring(&crank, &also_crank);
     for tile in tiles {
         assert_eq!(tile, TileColor::Green)
     }
@@ -210,10 +216,10 @@ fn tiles_all_green() {
 fn tiles_mixed() {
     let crank = Word::new("crank");
     let caset = Word::new("caset");
-    let tiles = get_coloring(crank, caset);
+    let tiles = get_coloring(&crank, &caset);
     assert_eq!(tiles[0], TileColor::Green);
-    assert_eq!(tiles[1], TileColor::Grey);
-    assert_eq!(tiles[2], TileColor::Yellow);
+    assert_eq!(tiles[1], TileColor::Yellow);
+    assert_eq!(tiles[2], TileColor::Grey);
     assert_eq!(tiles[3], TileColor::Grey);
     assert_eq!(tiles[4], TileColor::Grey);
 }

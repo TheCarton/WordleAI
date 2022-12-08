@@ -1,4 +1,5 @@
 mod game;
+mod bert;
 
 use std::fs;
 use crate::game::Word;
