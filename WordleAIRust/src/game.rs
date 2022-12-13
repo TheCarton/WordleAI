@@ -1,4 +1,4 @@
-use crate::WORDS_N;
+use crate::{GUESSES_N, WORDS_N};
 
 #[derive(PartialEq)]
 enum GameState {
@@ -29,7 +29,7 @@ impl Word {
         if !word.chars().all(|c| c.is_ascii_alphabetic()) {
             panic!("Word must contain ACII alphabetic characters only.")
         }
-        if index < 0 || index > WORDS_N {
+        if index > GUESSES_N {
             panic!("Word index out of range.")
         }
         let w = word.to_ascii_lowercase();

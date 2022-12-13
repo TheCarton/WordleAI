@@ -16,9 +16,135 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ea4048b-eb58-4e7c-b502-e2d7d12b187e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/src/bert.rs" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/src/bert.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/src/game.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WordleAIRust/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WordleAIRust/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/.rustc_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/WordleAI.d" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/debug/WordleAI.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/.fingerprint/WordleAI-5ddc1c2e995ef161/output-bin-WordleAI" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/debug/.fingerprint/WordleAI-5ddc1c2e995ef161/output-bin-WordleAI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/WordleAI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/debug/WordleAI.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/WordleAI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/debug/WordleAI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/deps/WordleAI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/debug/deps/WordleAI.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/deps/WordleAI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/debug/deps/WordleAI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/10uwxosutmfce396.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/13xmli3o7lysozvp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/15r8ss23xat27rbf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/1jhfzwahywkzi687.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/1ohvmhz0gvn2bw9i.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/1pax365sj1hpmv2c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/1s2ofoebx62pvtj3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/1ssdsnyu1eaq6qpu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/1ty9z91qrc9wij0j.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/1uk98c8tcg9sz1ox.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/1w6iultqcdaae4gc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/23sqiy5u5xtcf3fw.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/24x55fn88ksowwbd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/27zrn5tkd2m0n0r2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/2a3b0q0yu2fgd1i3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/2avtkkxn1sb452lx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/2gz1sm3oq62vykim.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/2p7pkr7sf6kt12pa.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/2wi2p3ghikp44gsc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/2x91m6yawxs3cdd8.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/38fkivw2sokd7o7y.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/3d0dmxolu2nkt7qf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/3eso2fhohma5j69w.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/3imkm3ggqnuqu0gy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/3lptztj8680z971a.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/3rdnauf3w93ggrbm.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/3t1uw0u42ba5qd0u.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/3tebqwl3v57fte4t.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/3wouf6cqbgm3hsfw.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/41onj35w6rtm28a.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/44fjij0j25svyivx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4cu17br755sls5vt.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4frw4edyd2ukrt83.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4hbi8254aq7qecwl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4o220cb6ulw5dt7y.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4om1fvb57rmzcdlu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4rcp5m06uugxfxag.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4sdvhhug2pk1i3j9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4vkgjc9fsn9f57li.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4w9p1t66eyem0n25.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/4xe6cipxu5bz6cn5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/554mp55r1d2z44s8.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/5chqf4rzn1dbx3s2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/5d62fsxxlenbewcy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/e08h2hok1v10t14.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/ffptckupbqewuft.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/k312hwjx98t75ma.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/l0cvbzaxg3sipnd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/l4h25t28cheikom.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/o2lkmly8lmut9l3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/p1zw9ez4x2sb83q.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/s1qgnfar9n7ih7w.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/tz4bwoubqgg0j1k.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/w2zhlwdhzfq68fp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs-working/y65wscwskr82mas.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qrscth-db0vbs.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/10uwxosutmfce396.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/13xmli3o7lysozvp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/15r8ss23xat27rbf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/1jhfzwahywkzi687.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/1ohvmhz0gvn2bw9i.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/1pax365sj1hpmv2c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/1s2ofoebx62pvtj3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/1ssdsnyu1eaq6qpu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/1ty9z91qrc9wij0j.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/1uk98c8tcg9sz1ox.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/1w6iultqcdaae4gc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/23sqiy5u5xtcf3fw.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/24x55fn88ksowwbd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/27zrn5tkd2m0n0r2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/2a3b0q0yu2fgd1i3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/2avtkkxn1sb452lx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/2gz1sm3oq62vykim.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/2p7pkr7sf6kt12pa.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/2wi2p3ghikp44gsc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/2x91m6yawxs3cdd8.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/38fkivw2sokd7o7y.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/3d0dmxolu2nkt7qf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/3eso2fhohma5j69w.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/3imkm3ggqnuqu0gy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/3lptztj8680z971a.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/3rdnauf3w93ggrbm.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/3t1uw0u42ba5qd0u.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/3tebqwl3v57fte4t.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/3wouf6cqbgm3hsfw.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/41onj35w6rtm28a.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/44fjij0j25svyivx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4cu17br755sls5vt.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4frw4edyd2ukrt83.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4hbi8254aq7qecwl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4o220cb6ulw5dt7y.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4om1fvb57rmzcdlu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4rcp5m06uugxfxag.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4sdvhhug2pk1i3j9.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4vkgjc9fsn9f57li.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4w9p1t66eyem0n25.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/4xe6cipxu5bz6cn5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/554mp55r1d2z44s8.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/5chqf4rzn1dbx3s2.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/5d62fsxxlenbewcy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/e08h2hok1v10t14.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/ffptckupbqewuft.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/k312hwjx98t75ma.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/l0cvbzaxg3sipnd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/l4h25t28cheikom.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/o2lkmly8lmut9l3.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/p1zw9ez4x2sb83q.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/s1qgnfar9n7ih7w.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/tz4bwoubqgg0j1k.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/w2zhlwdhzfq68fp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j-350fdkfi5ll42/y65wscwskr82mas.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/incremental/WordleAI-2rr8znk5eg4f2/s-ggb1qw0mnp-1iw1e9j.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +160,9 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="nnnsogoq" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2IqS76huOy17noi2bRnWD67v9Px" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -48,13 +177,53 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "last_opened_file_path": "C:/Users/Luke/Documents/GitHub/WordleAI/WordleAIRust/Cargo.toml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "settings.editor.selected.configurable": "CPPToolchains",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Cargo.Run WordleAI">
     <configuration name="Run WordleAI" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="run --package WordleAI --bin WordleAI" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/WordleAIRust" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test bert::word_containers_are_equal" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package WordleAI --bin WordleAI bert::word_containers_are_equal -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/WordleAIRust" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test bert::word_containers_are_not_equal" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package WordleAI --bin WordleAI bert::word_containers_are_not_equal -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$/WordleAIRust" />
       <option name="channel" value="DEFAULT" />
       <option name="requiredFeatures" value="true" />
@@ -73,6 +242,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Cargo.Run WordleAI" />
+        <item itemvalue="Cargo.Test bert::word_containers_are_equal" />
+        <item itemvalue="Cargo.Test bert::word_containers_are_not_equal" />
       </list>
     </recent_temporary>
   </component>
@@ -89,7 +260,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670907449331</updated>
       <workItem from="1670907450621" duration="62000" />
-      <workItem from="1670962770173" duration="94000" />
+      <workItem from="1670962770173" duration="8358000" />
     </task>
     <servers />
   </component>
