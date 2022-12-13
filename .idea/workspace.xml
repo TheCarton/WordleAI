@@ -3,16 +3,23 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/WordleAIRust/Cargo.toml" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ea4048b-eb58-4e7c-b502-e2d7d12b187e" name="Changes" comment="" />
+    <list default="true" id="3ea4048b-eb58-4e7c-b502-e2d7d12b187e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordleAIRust/target/debug/WordleAI.d" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/debug/WordleAI.d" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,12 +47,38 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/Luke/Documents/GitHub/WordleAI/WordleAIRust/Cargo.toml",
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Run WordleAI" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="run --package WordleAI --bin WordleAI" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/WordleAIRust" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Run WordleAI" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -56,6 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670907449331</updated>
       <workItem from="1670907450621" duration="62000" />
+      <workItem from="1670962770173" duration="94000" />
     </task>
     <servers />
   </component>

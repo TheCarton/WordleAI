@@ -8,7 +8,7 @@ const WORDS_N: usize = 2315;
 
 fn main() {
 
-    let file_path = "/home/luke/WordleAIProject/WordleAI/word-bank.csv";
+    let file_path = r"C:\Users\Luke\Documents\GitHub\WordleAI\word-bank.csv";
 
     let contents = fs::read_to_string(file_path)
         .expect("Should have been able to read the file");
