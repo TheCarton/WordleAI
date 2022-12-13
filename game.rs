@@ -204,8 +204,8 @@ fn alphabet_maps_to_indices() {
 
 #[test]
 fn tiles_all_grey() {
-    let crank = Word::new("crank");
-    let extol = Word::new("extol");
+    let crank = Word::new("crank", 0);
+    let extol = Word::new("extol", 1);
     let tiles = get_coloring(&crank, &extol);
     for tile in tiles {
         assert_eq!(tile, TileColor::Grey)
@@ -214,8 +214,8 @@ fn tiles_all_grey() {
 
 #[test]
 fn tiles_all_green() {
-    let crank = Word::new("crank");
-    let also_crank = Word::new("crank");
+    let crank = Word::new("crank",0);
+    let also_crank = Word::new("crank", 0);
     let tiles = get_coloring(&crank, &also_crank);
     for tile in tiles {
         assert_eq!(tile, TileColor::Green)
@@ -224,8 +224,8 @@ fn tiles_all_green() {
 
 #[test]
 fn tiles_mixed() {
-    let crank = Word::new("crank");
-    let caset = Word::new("caset");
+    let crank = Word::new("crank", 0);
+    let caset = Word::new("caset", 1);
     let tiles = get_coloring(&crank, &caset);
     assert_eq!(tiles[0], TileColor::Green);
     assert_eq!(tiles[1], TileColor::Yellow);

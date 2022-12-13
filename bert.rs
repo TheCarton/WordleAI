@@ -1,41 +1,45 @@
 use std::collections::HashMap;
-use std::ops::{Index, IndexMut};
 use crate::game::{get_coloring, TileColor};
 use crate::{Word, WORDS_N};
 
 
-pub struct Transition<'a>{
-    map: HashMap<WordList<'a>, f32>,
+pub struct Transition{
+    map: HashMap<WordContainer, f32>,
 }
 
 #[derive(Eq, Hash, PartialEq, Debug)]
-pub struct WordList<'a> {
-    words: [&'a Word; WORDS_N],
+pub struct WordContainer {
+    bool_array: [bool; WORDS_N],
+    word_indices: Vec<usize>,
 }
 
-impl <'a> WordList<'a> {
-    fn new() -> WordList<'a> {
-        WordList {
-            words: [&Word::new("zonal", 2314); WORDS_N],
+impl WordContainer {
+    fn new() -> WordContainer{
+        WordContainer {
+            bool_array: [false; WORDS_N],
+            word_indices: Vec::new(),
         }
     }
 
     fn len(&self) -> usize {
-        self.words.len()
+        self.word_indices.len()
+    }
+
+    fn add_word(&mut self, word: &Word){
+        self.bool_array[word.index] = true;
+        self.word_indices.push(word.index);
+    }
+
+    fn has_word(&self, word: &Word) -> bool{
+        self.bool_array[word.index]
     }
 }
 
-impl <'a> Index<usize> for WordList<'a> {
-    type Output = &'a Word;
+impl Iterator for WordContainer {
+    type Item = usize;
 
-    fn index(&self, index: usize) -> &Self::Output {
-        &self.words[index]
-    }
-}
-
-impl <'a> IndexMut<usize> for WordList<'a>{
-    fn index_mut(&mut self, index: usize) -> &mut Self::Output {
-        &mut self.words[index]
+    fn next(&mut self) -> Option<Self::Item> {
+        todo!()
     }
 }
 
@@ -54,34 +58,43 @@ fn is_valid_solution(action: &Word, tile_coloring: [TileColor; 5], solution: &Wo
     return true;
 }
 
+struct Wordle {
+    words: [Word; WORDS_N]
+}
 
-pub fn get_transition<'a>(state: &'a WordList, action: &'a Word) -> Transition<'a> {
-    let mut map: HashMap<WordList, f32> = HashMap::new();
-    for solution in state.words{
-        let tile_coloring = get_coloring(action, &solution);
-        let mut s_temp = WordList::new();
-        for temp_sol in state.words{
-            if is_valid_solution(action, tile_coloring, temp_sol) {
-                s_temp[temp_sol.index] = temp_sol;
+impl Wordle {
+    fn get_transition<'a>(&self, state: &'a WordContainer, action: &'a Word) -> Transition {
+        let mut map: HashMap<WordContainer, f32> = HashMap::new();
+        for solution_index in &state.word_indices {
+            let solution = self.words[*solution_index];
+            let tile_coloring = get_coloring(action, &solution);
+            let mut s_temp = WordContainer::new();
+            for temp_sol_index in &state.word_indices {
+                let temp_sol = self.words[*temp_sol_index];
+                if is_valid_solution(action, tile_coloring, &temp_sol) {
+                    s_temp.add_word(&temp_sol);
+                }
+            }
+            let transition_pr = (1 / state.len()) as f32;
+            if let Some(pr) = map.get_mut(&s_temp) {
+                *pr += transition_pr;
+            } else {
+                map.insert(s_temp, transition_pr);
             }
         }
-        let transition_pr = (1 / state.len()) as f32;
-        if let Some(pr) = map.get_mut(&s_temp) {
-            *pr += transition_pr;
-        } else {
-            map.insert(s_temp, transition_pr);
+        Transition {
+            map,
         }
-    }
-    Transition {
-        map,
     }
 }
 
+
+
 #[test]
 fn is_not_possible_solution() {
-    let bad_solution = Word::new("uncle");
-    let action = Word::new("untie");
-    let secret = Word::new("union");
+    let bad_solution = Word::new("uncle", 0);
+    let action = Word::new("untie", 1);
+    let secret = Word::new("union", 2);
 
     let coloring = get_coloring(&secret, &action);
     assert!(!is_valid_solution(&action, coloring, &bad_solution))
@@ -89,26 +102,11 @@ fn is_not_possible_solution() {
 
 #[test]
 fn is_possible_solution() {
-    let solution = Word::new("union");
+    let solution = Word::new("union", 0);
 
-    let action = Word::new("untie");
-    let secret = Word::new("union");
+    let action = Word::new("untie", 1);
+    let secret = Word::new("union", 0);
 
     let coloring = get_coloring(&secret, &action);
     assert!(is_valid_solution(&action, coloring, &solution))
-}
-
-#[test]
-fn wordlists_are_same() {
-    let union = Word::new("union");
-    let sabet = Word::new("sabet");
-    let mut list_1 = WordList::new();
-    list_1.push(&union);
-    list_1.push(&sabet);
-
-    let mut list_2 = WordList::new();
-    list_2.push(&sabet);
-    list_2.push(&union);
-
-    assert_eq!(list_1, list_2);
 }
