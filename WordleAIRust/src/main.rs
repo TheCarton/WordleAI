@@ -2,6 +2,7 @@ mod game;
 mod bert;
 
 use std::fs;
+use crate::bert::Wordle;
 use crate::game::Word;
 
 const WORDS_N: usize = 2315;
@@ -15,11 +16,11 @@ fn main() {
         .expect("Should have been able to read the file");
 
     let strings_sols: Vec<&str> = contents_sols.split_whitespace().collect();
-
-    let mut solutions: Vec<Word> = vec![];
+    let blank = Word::new("xxxxx", 0);
+    let mut solutions : [Word; WORDS_N] = [blank; WORDS_N];
     for (i, string) in strings_sols.iter().enumerate(){
         let word = Word::new(string, i);
-        solutions.push(word)
+        solutions[i] = word;
     }
 
     let file_path_guesses = r"C:\Users\Luke\Documents\GitHub\WordleAI\valid-words.csv";
@@ -28,12 +29,14 @@ fn main() {
 
 
     let strings_guesses: Vec<&str> = contents_guesses.split_whitespace().collect();
-    let mut guesses: Vec<Word> = vec![];
+    let mut guesses: [Word; GUESSES_N] = [blank; GUESSES_N];
 
     for (i, string) in strings_guesses.iter().enumerate(){
         let word = Word::new(string, i);
-        guesses.push(word);
+        guesses[i] = word;
     }
+
+    let mut worldle = Wordle::new(guesses, solutions);
 
 
     assert_eq!(WORDS_N, solutions.len());

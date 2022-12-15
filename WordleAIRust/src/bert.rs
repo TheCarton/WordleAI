@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use crate::game::{get_coloring, TileColor};
+use crate::game::{Game, get_coloring, TileColor};
 use crate::{GUESSES_N, Word, WORDS_N};
 
 
@@ -78,16 +78,29 @@ struct StateTurn {
     turn: usize,
 }
 
-struct Wordle {
+pub struct Wordle {
     words: [Word; GUESSES_N],
+    solutions: [Word; WORDS_N],
     guess_container: WordContainer,
     v_mem: HashMap<StateTurn, f32>,
 }
 
 impl Wordle {
-    fn new(valid_guesses: [Word; GUESSES_N], guess_container: WordContainer) -> Wordle {
+    pub fn solve(&mut self, game: Game) {
+        
+        let salet = self.words[9504];
+
+
+    }
+
+    pub fn new(words: [Word; GUESSES_N], solutions: [Word; WORDS_N]) -> Wordle {
+        let guess_container = WordContainer {
+            bool_array: [true; GUESSES_N],
+            word_indices: (0..GUESSES_N).collect(),
+        };
         Wordle {
-            words: valid_guesses,
+            words,
+            solutions,
             guess_container,
             v_mem: HashMap::new(),
         }
@@ -116,7 +129,7 @@ impl Wordle {
         }
     }
 
-    fn get_state_value(&mut self, state_turn: StateTurn, v_mem: Transition) -> f32 {
+    fn get_state_value(&self, state_turn: StateTurn) -> f32 {
         let t = state_turn.turn;
         let state = &state_turn.state;
         if t == 6 || (t == 5 && state.len() > 1) {
@@ -152,9 +165,20 @@ impl Wordle {
                 if temp >= val {
                     break;
                 }
+                else if next_state.len() == 1 && next_state.has_word(action) {
+                    continue;
+                }
+                let next_state_turn = StateTurn {
+                    turn: t + 1,
+                    state: next_state,
+                };
+                temp += self.get_state_value(next_state_turn);
+            }
+            if temp < state_value {
+                state_value = temp;
             }
         }
-        0f32
+        return state_value;
     }
 }
 
