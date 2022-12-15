@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use crate::game::{get_coloring, TileColor};
-use crate::{Word, WORDS_N};
+use crate::{GUESSES_N, Word, WORDS_N};
 
 
 pub struct Transition{
@@ -9,14 +9,14 @@ pub struct Transition{
 
 #[derive(Eq, Hash, PartialEq, Debug)]
 pub struct WordContainer {
-    bool_array: [bool; WORDS_N],
+    bool_array: [bool; GUESSES_N],
     word_indices: Vec<usize>,
 }
 
 impl WordContainer {
     fn new() -> WordContainer{
         WordContainer {
-            bool_array: [false; WORDS_N],
+            bool_array: [false; GUESSES_N],
             word_indices: Vec::new(),
         }
     }
@@ -32,6 +32,28 @@ impl WordContainer {
 
     fn has_word(&self, word: &Word) -> bool{
         self.bool_array[word.index]
+    }
+
+    fn disjoint(&self, other: &WordContainer) -> WordContainer {
+        let mut result_array = self.bool_array.clone();
+        for index in &other.word_indices {
+            result_array[*index] = false;
+        }
+        WordContainer {
+            bool_array: result_array,
+            word_indices: Vec::new(),
+        }
+    }
+
+    fn union(&self, other: &WordContainer) -> WordContainer {
+        let mut result_array = self.bool_array.clone();
+        for index in &other.word_indices {
+            result_array[*index] = true;
+        }
+        WordContainer {
+            bool_array: result_array,
+            word_indices: Vec::new(),
+        }
     }
 }
 
@@ -57,27 +79,27 @@ struct StateTurn {
 }
 
 struct Wordle {
-    valid_solutions: [Word; WORDS_N],
-    valid_guesses: [Word; WORDS_N],
+    words: [Word; GUESSES_N],
+    guess_container: WordContainer,
     v_mem: HashMap<StateTurn, f32>,
 }
 
 impl Wordle {
-    fn new(valid_solutions: [Word; WORDS_N], valid_guesses: [Word; WORDS_N]) -> Wordle {
+    fn new(valid_guesses: [Word; GUESSES_N], guess_container: WordContainer) -> Wordle {
         Wordle {
-            valid_solutions,
-            valid_guesses,
+            words: valid_guesses,
+            guess_container,
             v_mem: HashMap::new(),
         }
     }
     fn get_transition(&self, state: &WordContainer, action: &Word) -> Transition {
         let mut map: HashMap<WordContainer, f32> = HashMap::new();
         for solution_index in &state.word_indices {
-            let solution = self.valid_solutions[*solution_index];
+            let solution = self.words[*solution_index];
             let tile_coloring = get_coloring(action, &solution);
             let mut s_temp = WordContainer::new();
             for temp_sol_index in &state.word_indices {
-                let temp_sol = self.valid_solutions[*temp_sol_index];
+                let temp_sol = self.words[*temp_sol_index];
                 if is_valid_solution(action, tile_coloring, &temp_sol) {
                     s_temp.add_word(&temp_sol);
                 }
@@ -111,6 +133,26 @@ impl Wordle {
         }
         else if let Some(v) = self.v_mem.get(&state_turn) {
             return *v;
+        }
+        let mut state_value = f32::INFINITY;
+        let new_guesses = self.guess_container.disjoint(state);
+        let actions = state.union(&new_guesses);
+        for action_index in actions.word_indices {
+            let mut temp = 1f32;
+            let action = &self.words[action_index];
+            let next_states = self.get_transition(state, action);
+            if next_states.map.len() == 1 && next_states.map.contains_key(&state) {
+                continue;
+            }
+            for next_state in next_states.map.keys() {
+                temp += (2 * next_state.len() - 1) as f32 / next_state.len() as f32;
+            }
+
+            for (next_state, val) in next_states.map {
+                if temp >= val {
+                    break;
+                }
+            }
         }
         0f32
     }
@@ -166,4 +208,41 @@ fn word_containers_are_not_equal() {
     let container_3 = WordContainer::new();
     assert_ne!(container_1, container_2);
     assert_ne!(container_1, container_3)
+}
+
+#[test]
+fn stateturn_hashmap_works() {
+    let mut wc1 = WordContainer::new();
+    let union = Word::new("union", 0);
+    let untie = Word::new("untie", 1);
+    wc1.add_word(&union);
+
+    let turn_1 = StateTurn{
+        state: wc1,
+        turn: 1,
+    };
+    let mut wc2 = WordContainer::new();
+    wc2.add_word(&union);
+    wc2.add_word(&untie);
+
+    let turn_2 = StateTurn{
+        state: wc2,
+        turn: 2,
+    };
+
+    let mut st_hashmap1: HashMap<&StateTurn, f32> = HashMap::new();
+    st_hashmap1.insert(&turn_1, 0.5);
+    if let Some(p) = st_hashmap1.get(&turn_1) {
+        assert_eq!(*p, 0.5);
+    } else {
+        assert!(false);
+    }
+
+    let mut st_hashmap2: HashMap<&StateTurn, f32> = HashMap::new();
+    st_hashmap2.insert(&turn_2, 1.0);
+    if let Some(p) = st_hashmap2.get(&turn_2) {
+        assert_eq!(*p, 1.0);
+    } else {
+        assert!(false);
+    }
 }
