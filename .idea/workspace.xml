@@ -19,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WordleAIRust/src/bert.rs" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/src/bert.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WordleAIRust/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/src/game.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordleAIRust/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WordleAIRust/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/WordleAIRust/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,6 +156,7 @@
       <workItem from="1670962770173" duration="8379000" />
       <workItem from="1671047977625" duration="5678000" />
       <workItem from="1671069856653" duration="3841000" />
+      <workItem from="1671133652345" duration="4811000" />
     </task>
     <servers />
   </component>

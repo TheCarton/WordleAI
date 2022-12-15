@@ -1,7 +1,7 @@
 use crate::{GUESSES_N, WORDS_N};
 
 #[derive(PartialEq)]
-enum GameState {
+pub enum GameState {
     Active,
     Win,
     Lose,
@@ -103,6 +103,11 @@ impl Game<'_> {
             attempts: 0,
             hidden_word,
         }
+    }
+
+    pub fn submit_guess(&mut self, guess: &Word) -> [TileColor; 5]{
+        self.check_guess(guess);
+        get_coloring(self.hidden_word, guess)
     }
     fn check_guess(&mut self, guess: &Word) {
         self.attempts += 1;

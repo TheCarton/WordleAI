@@ -86,11 +86,15 @@ pub struct Wordle {
 }
 
 impl Wordle {
-    pub fn solve(&mut self, game: Game) {
-        
-        let salet = self.words[9504];
-
-
+    fn get_state(&self, coloring: [TileColor; 5], prev_state: &WordContainer, action: &Word) -> WordContainer {
+        let mut new_state = WordContainer::new();
+        for index in &prev_state.word_indices {
+            let sol = self.words[*index];
+            if is_valid_solution(action, coloring, &sol) {
+                new_state.add_word(&sol);
+            }
+        }
+        new_state
     }
 
     pub fn new(words: [Word; GUESSES_N], solutions: [Word; WORDS_N]) -> Wordle {
